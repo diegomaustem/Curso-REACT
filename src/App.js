@@ -1,53 +1,38 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Equipe = (props) => {
+// Aplicando o Class Component ::: 
+class Equipe extends Component{
 
-    return(
-        <div>
-            <Sobre nome={props.nome} cargo={props.cargo} idade={props.idade}/>
-            <Social social={props.social}/>
-            <Formacao faculdade={props.faculdade} curso={props.curso}/>
-        </div>
-    );
+    render(){
+        return(
+            <div>
+                <Informacao nome={this.props.nome} idade={this.props.idade} cargo={this.props.cargo}/>
+            </div>
+        );
+    }
 
 }
 
-const Sobre = (props) => {
+class Informacao extends Component{
 
-    return(
-        <div>
-            <h2>Nome: {props.nome}</h2>
-            <h2>Cargo: {props.cargo}</h2>
-            <h2>Idade: {props.idade}</h2>
-        </div>
-    );
-}
+    render(){
+        return(
+            <div>
+                <h2> Profissional: {this.props.nome} </h2>
+                <h2> Idade: {this.props.idade} </h2>
+                <h2> Cargo: {this.props.cargo} </h2>
+            </div>
+        );
+    }
 
-const Social = (props) => {
-
-    return(
-        <div>
-            <h2>Social:{props.social}</h2>
-        </div>
-    );
-}
-
-const Formacao = (props) => {
-
-    return (
-        <div>
-            <h2>Faculdade:{props.faculdade}</h2>
-            <h2>Curso:{props.curso}</h2>
-        </div>
-    );
 }
 
 function App(){
 
      return(
         <div>
-            <h1>Currículo Profissional</h1>
-            <Equipe nome=" Diego Lima" idade=" 28" cargo=" Programador" curso=" Sistema de Informação" social=" Instagran" faculdade=" Sete de Setembro"/>
+            <h1>Dados Pessoais</h1>
+            <Equipe nome=" Diego" cargo="Programador" idade="28"/>
         </div>
      );
 }
