@@ -28,7 +28,7 @@ class Membro extends Component{
                 {this.state.status ?
                     <div>
                         <h2>Bem vindo ao sistema!</h2>
-                        <button onClick={this.sair}>Entrar no sistema</button>
+                        <button onClick={this.sair}>Sair</button>
                     </div> :
 
                     <div>
